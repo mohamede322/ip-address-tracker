@@ -6,14 +6,16 @@ import arrow from "./images/icon-arrow.svg";
 
 function App() {
   const [IP, setIP] = useState("");
-  const api = `http://ip-api.com/json/${IP}?fields=66846719`;
-  const [data, setData] = useState("");
+  const api = `https://ipapi.co/${IP}/json/`;
+  const [data, setData] = useState({});
   const [moving, setMoving] = useState(true);
   async function getData() {
     const response = await fetch(api);
     const data = await response.json();
     setData(data);
+    console.log(data);
   }
+
   useEffect(() => {
     getData();
   }, []);
@@ -38,7 +40,7 @@ function App() {
   function onMouseLeave() {
     setTimeout(() => {
       setMoving(true);
-    }, 100);
+    }, 250);
   }
 
   return (

@@ -1,23 +1,57 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect, useState } from "react";
+import Map from "./components/Map";
+import Input from "./components/Input";
+import Info from "./components/Info";
+import arrow from "./images/icon-arrow.svg";
 
 function App() {
+  const [IP, setIP] = useState("");
+  const api = `http://ip-api.com/json/${IP}?fields=66846719`;
+  const [data, setData] = useState("");
+  const [moving, setMoving] = useState(true);
+  async function getData() {
+    const response = await fetch(api);
+    const data = await response.json();
+    setData(data);
+  }
+  useEffect(() => {
+    getData();
+  }, []);
+
+  function handleChange(e) {
+    const { value } = e.target;
+    setIP(value);
+  }
+
+  function onMouseDown() {
+    const regex =
+      /^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/;
+    const alertMsg = "You have entered an invalid IP address!";
+    if (regex.test(IP)) {
+      setMoving(false);
+      getData();
+    } else {
+      alert(alertMsg);
+    }
+  }
+
+  function onMouseLeave() {
+    setTimeout(() => {
+      setMoving(true);
+    }, 100);
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Input
+        arrow={arrow}
+        value={IP}
+        onChange={handleChange}
+        onMouseDown={onMouseDown}
+        onMouseUp={onMouseLeave}
+      />
+      <Info data={data} />
+      {moving && <Map data={data} />}
     </div>
   );
 }

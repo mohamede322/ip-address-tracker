@@ -1,0 +1,197 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: inherit;
+  outline: none;
+  border: none;
+}
+
+.App {
+  position: relative;
+  height: 100vh;
+}
+
+.App .header {
+  height: 300px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 30px;
+  background-image: url("../images/pattern-bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #fff;
+  padding: 30px 15px;
+}
+
+.App .header .input-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 45px;
+}
+
+.App .header .input-container input {
+  height: 100%;
+  padding: 0 10px;
+  width: 500px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  font-weight: bold;
+}
+
+.App .header .input-container input::-webkit-input-placeholder {
+  font-weight: 500;
+  color: #c9c9c9;
+}
+
+.App .header .input-container input:-ms-input-placeholder {
+  font-weight: 500;
+  color: #c9c9c9;
+}
+
+.App .header .input-container input::-ms-input-placeholder {
+  font-weight: 500;
+  color: #c9c9c9;
+}
+
+.App .header .input-container input::placeholder {
+  font-weight: 500;
+  color: #c9c9c9;
+}
+
+.App .header .input-container .arrow {
+  background-color: #000;
+  height: 100%;
+  padding: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  cursor: pointer;
+  -webkit-transition: 0.1s;
+  transition: 0.1s;
+}
+
+.App .header .input-container .arrow:hover {
+  background-color: #1b1b1b;
+}
+
+.App .info-container {
+  position: absolute;
+  min-width: 600px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
+  background: #fff;
+  z-index: 10000;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  border-radius: 20px;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  padding: 20px 0;
+}
+
+.App .info-container .box {
+  position: relative;
+  height: 100%;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  padding: 20px;
+}
+
+.App .info-container .box p {
+  font-size: 14px;
+  font-weight: 500;
+  color: #c3c3c3;
+  letter-spacing: 1px;
+}
+
+.App .info-container .box h3 {
+  width: 100%;
+}
+
+.App .info-container .box:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  width: 1px;
+  height: 80%;
+  background-color: #ddd;
+  right: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.App .map-container {
+  height: calc(100% - 300px);
+  background-color: #4f5abc;
+}
+
+@media (max-width: 699px) {
+  .App .header {
+    text-align: center;
+  }
+  .App .header h1 {
+    font-size: 24px;
+  }
+  .App .header .input-container {
+    width: 100%;
+  }
+  .App .info-container {
+    margin-top: 80px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    min-width: 65%;
+  }
+  .App .info-container .box {
+    padding: 5px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .App .info-container .box::after {
+    display: none;
+  }
+}
+/*# sourceMappingURL=style.css.map */

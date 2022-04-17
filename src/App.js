@@ -13,7 +13,6 @@ function App() {
     const response = await fetch(api);
     const data = await response.json();
     setData(data);
-    console.log(data);
   }
 
   useEffect(() => {

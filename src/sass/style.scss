@@ -117,9 +117,13 @@ $border-radius: 10px;
       margin-top: 80px;
       flex-direction: column;
       min-width: 65%;
+      gap: 0;
       .box {
         padding: 5px;
         align-items: center;
+        &:not(:last-child) {
+          margin-bottom: 10px;
+        }
         &::after {
           display: none;
         }

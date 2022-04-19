@@ -110,8 +110,9 @@
   background: #fff;
   z-index: 10000;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  top: 20%;
   border-radius: 20px;
   -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
           box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
@@ -176,7 +177,6 @@
     width: 100%;
   }
   .App .info-container {
-    margin-top: 80px;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -191,7 +191,7 @@
             align-items: center;
   }
   .App .info-container .box:not(:last-child) {
-    margin-bottom: 30px;
+    margin-bottom: 20px;
   }
   .App .info-container .box::after {
     display: none;

@@ -77,7 +77,6 @@ $border-radius: 10px;
       flex-direction: column;
       justify-content: flex-start;
       padding: 20px;
-      text-align: center;
       p {
         font-size: 14px;
         font-weight: 500;
@@ -122,6 +121,7 @@ $border-radius: 10px;
       .box {
         padding: 5px;
         align-items: center;
+        text-align: center;
         &:not(:last-child) {
           margin-bottom: 20px;
         }

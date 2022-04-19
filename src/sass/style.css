@@ -136,7 +136,6 @@
       -ms-flex-pack: start;
           justify-content: flex-start;
   padding: 20px;
-  text-align: center;
 }
 
 .App .info-container .box p {
@@ -190,6 +189,7 @@
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    text-align: center;
   }
   .App .info-container .box:not(:last-child) {
     margin-bottom: 20px;

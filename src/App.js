@@ -43,7 +43,7 @@ function App() {
   }
 
   return (
-    <div className="App">
+    <div className="App" style={{ height: window.innerHeight }}>
       <Input
         arrow={arrow}
         value={IP}

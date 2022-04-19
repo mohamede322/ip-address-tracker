@@ -191,7 +191,7 @@
             align-items: center;
   }
   .App .info-container .box:not(:last-child) {
-    margin-bottom: 10px;
+    margin-bottom: 30px;
   }
   .App .info-container .box::after {
     display: none;
